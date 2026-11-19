@@ -1,0 +1,1207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d27">
+<title>A Little World for Nefertiti ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #100d27;
+  --purple: #34205b;
+  --pink: #f4a6c5;
+  --gold: #f4d28a;
+  --white: #fff5fb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 15% 20%, #55317b55, transparent 35%),
+    radial-gradient(circle at 85% 75%, #a3447650, transparent 35%),
+    linear-gradient(145deg, #100d27, #21143c, #100d27);
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #ffffffaa 50%, transparent 100%),
+    radial-gradient(2px 2px at 70% 20%, #ffffff88 50%, transparent 100%),
+    radial-gradient(1px 1px at 40% 80%, #ffffffaa 50%, transparent 100%),
+    radial-gradient(2px 2px at 85% 65%, #ffffff77 50%, transparent 100%),
+    radial-gradient(1px 1px at 10% 90%, #ffffff88 50%, transparent 100%);
+  background-size: 280px 280px;
+  animation: starsMove 30s linear infinite;
+}
+
+@keyframes starsMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100px); }
+}
+
+/* MAHADEV OPENING */
+
+#opening {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.opening-content {
+  max-width: 500px;
+  position: relative;
+  z-index: 5;
+  animation: appear 1.5s ease;
+}
+
+.om {
+  font-size: clamp(65px, 15vw, 100px);
+  color: var(--gold);
+  text-shadow: 0 0 20px #f4d28a, 0 0 55px #f4d28a88;
+  animation: glow 3s infinite alternate;
+}
+
+.trident {
+  font-size: 48px;
+  margin: 8px 0 15px;
+  filter: drop-shadow(0 0 12px #f4d28a);
+}
+
+.mantra {
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.opening-content h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(43px, 10vw, 65px);
+  font-weight: normal;
+  color: var(--pink);
+  margin: 18px 0;
+}
+
+.opening-content p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #e9dced;
+  margin-bottom: 28px;
+}
+
+.enter-btn {
+  border: 1px solid var(--gold);
+  border-radius: 40px;
+  padding: 15px 28px;
+  color: #211331;
+  background: linear-gradient(120deg, #f4d28a, #f4a6c5);
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 0 25px #f4a6c566;
+  transition: .3s;
+  position: relative;
+  z-index: 10;
+}
+
+.enter-btn:active {
+  transform: scale(.95);
+}
+
+.enter-btn:hover {
+  box-shadow: 0 0 35px #f4a6c5aa;
+  transform: translateY(-3px);
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 15px #f4d28a; }
+  to { text-shadow: 0 0 45px #f4d28a, 0 0 70px #f4a6c5; }
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* MAIN WEBSITE */
+
+#main {
+  display: none;
+  animation: appear 1.2s ease;
+}
+
+header {
+  text-align: center;
+  padding: 75px 20px 45px;
+}
+
+.small-heading {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(55px, 12vw, 85px);
+  color: var(--pink);
+  font-weight: normal;
+  margin: 18px 0;
+  text-shadow: 0 0 20px #f4a6c544;
+}
+
+header p {
+  color: #e6d6ec;
+  font-size: 13px;
+  line-height: 2;
+  max-width: 450px;
+  margin: auto;
+}
+
+section {
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(40px, 9vw, 58px);
+  color: var(--pink);
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: #cbbbd7;
+  font-size: 12px;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  z-index: 20;
+  pointer-events: none;
+  animation: floatHeart 7s linear forwards;
+  opacity: .7;
+}
+
+@keyframes floatHeart {
+  0% { transform: translateY(0) rotate(0); opacity: 0; }
+  15% { opacity: .8; }
+  100% { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
+}
+
+/* MEMORY CARDS */
+
+.memory-wrap {
+  max-width: 420px;
+  margin: auto;
+  position: relative;
+}
+
+.memory-card {
+  min-height: 270px;
+  border: 1px solid #e8b8d755;
+  border-radius: 24px;
+  padding: 30px 23px;
+  background: linear-gradient(145deg, #493064, #241a42);
+  box-shadow: 0 15px 45px #00000044;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.memory-card:active {
+  transform: scale(.98);
+}
+
+.memory-number {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.memory-icon {
+  font-size: 40px;
+  margin-bottom: 18px;
+}
+
+.memory-card h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  color: var(--pink);
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.memory-card p {
+  font-size: 13px;
+  color: #f1e7f3;
+  line-height: 1.9;
+}
+
+.memory-hint {
+  font-size: 10px;
+  color: #cbbbd7;
+  margin-top: 18px;
+}
+
+.memory-controls {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.round-btn {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  border: 1px solid #e7b6d8;
+  color: var(--white);
+  background: #39234f;
+  font-size: 19px;
+}
+
+.round-btn:active {
+  background: #a45c8e;
+}
+
+#memoryCount {
+  font-size: 12px;
+  color: var(--gold);
+}
+
+/* NEW MOVING PHOTO MEMORY STRIP */
+
+.moving-section {
+  padding: 45px 0 65px;
+  overflow: hidden;
+}
+
+.moving-section .section-title,
+.moving-section .section-subtitle {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.photo-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 12px 0 22px;
+}
+
+.photo-track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  animation: moveRight 35s linear infinite;
+}
+
+.photo-track:hover {
+  animation-play-state: paused;
+}
+
+.moving-photo {
+  width: 210px;
+  height: 260px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  position: relative;
+  border: 1px solid #f4a6c577;
+  box-shadow: 0 10px 35px #00000066;
+}
+
+.moving-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s;
+}
+
+.moving-photo:hover img {
+  transform: scale(1.08);
+}
+
+.moving-photo::after {
+  content: "♡";
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  color: white;
+  font-size: 25px;
+  text-shadow: 0 0 12px #f4a6c5;
+}
+
+@keyframes moveRight {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.marquee-caption {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
+  max-width: 850px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.photo {
+  border-radius: 18px;
+  overflow: hidden;
+  background: #34234a;
+  border: 1px solid #ffffff22;
+  min-height: 150px;
+  box-shadow: 0 10px 25px #00000033;
+}
+
+.photo img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  transition: .5s;
+}
+
+.photo img:hover {
+  transform: scale(1.06);
+}
+
+.photo p {
+  padding: 12px 5px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 23px;
+  color: var(--pink);
+}
+
+/* TIMELINE */
+
+.timeline {
+  max-width: 500px;
+  margin: auto;
+  text-align: left;
+  border-left: 1px solid #d99ac4;
+  padding-left: 24px;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 35px;
+}
+
+.timeline-item::before {
+  content: "♡";
+  position: absolute;
+  left: -34px;
+  top: 0;
+  color: var(--gold);
+  font-size: 20px;
+}
+
+.timeline-item h3 {
+  color: var(--gold);
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.timeline-item p {
+  color: #e3d5e9;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* LOVE LETTER */
+
+.letter-box {
+  max-width: 520px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 22px;
+  border: 1px solid #e8b8d766;
+  background: linear-gradient(145deg, #35244f, #1c1737);
+  box-shadow: 0 15px 40px #00000033;
+}
+
+.letter-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.letter-box h3 {
+  font-family: 'Great Vibes', cursive;
+  color: var(--pink);
+  font-size: 35px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.letter-box p {
+  font-size: 13px;
+  color: #e9ddec;
+  line-height: 2;
+}
+
+.letter-button {
+  margin-top: 22px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  padding: 12px 22px;
+  background: transparent;
+  color: var(--gold);
+}
+
+#letterMessage {
+  display: none;
+  margin-top: 20px;
+  border-top: 1px solid #ffffff33;
+  padding-top: 20px;
+  animation: appear .7s ease;
+}
+
+/* FINAL SURPRISE */
+
+.surprise {
+  max-width: 520px;
+  margin: auto;
+  padding: 35px 22px;
+  border-radius: 25px;
+  background: linear-gradient(145deg, #492956, #201737);
+  border: 1px solid #f4a6c566;
+}
+
+.surprise h2 {
+  font-family: 'Great Vibes', cursive;
+  color: var(--pink);
+  font-size: 48px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.surprise p {
+  font-size: 13px;
+  color: #f0e4f2;
+  line-height: 2;
+}
+
+.surprise button {
+  margin-top: 22px;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 24px;
+  background: linear-gradient(120deg, #f4d28a, #f4a6c5);
+  color: #261533;
+  font-weight: 600;
+}
+
+#surpriseMessage {
+  display: none;
+  margin-top: 22px;
+  color: var(--gold);
+  font-family: 'Great Vibes', cursive;
+  font-size: 34px;
+  line-height: 1.5;
+}
+
+/* MUSIC BUTTON */
+
+.music-button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 18px;
+  z-index: 50;
+  border: 1px solid var(--gold);
+  border-radius: 50px;
+  padding: 12px 17px;
+  color: var(--white);
+  background: linear-gradient(135deg, #493064, #211638);
+  box-shadow: 0 0 20px #f4a6c555;
+  font-size: 12px;
+}
+
+.music-button:active {
+  transform: scale(.95);
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #bdaacb;
+  font-size: 11px;
+  line-height: 2;
+}
+
+footer span {
+  color: var(--pink);
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 650px) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .moving-photo {
+    width: 175px;
+    height: 220px;
+  }
+
+  .photo-track {
+    gap: 13px;
+    animation-duration: 28s;
+  }
+}
+
+@media (max-width: 380px) {
+  .memory-card {
+    min-height: 290px;
+  }
+
+  .photo img {
+    height: 145px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-track {
+    animation-duration: 70s;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- BACKGROUND MUSIC -->
+<audio id="backgroundMusic" src="mymusic.mp3" loop preload="auto"></audio>
+
+<!-- MAHADEV OPENING -->
+
+<div id="opening">
+  <div class="opening-content">
+    <div class="om">ॐ</div>
+    <div class="trident">🔱</div>
+    <div class="mantra">ॐ नमः शिवाय</div>
+
+    <h1>A little blessing before a little love♡</h1>
+
+    <p>
+      हर हर महादेव ♡<br>
+      May Mahadev always bless your smile cuttu,<br>
+      protect your dreams and fill your life with happiness.
+    </p>
+
+    <button
+      type="button"
+      class="enter-btn"
+      onclick="enterWebsite()">
+        MY LITTLE WORLD ♡
+    </button>
+  </div>
+</div>
+
+<!-- MAIN WEBSITE -->
+
+<main id="main">
+
+<header>
+  <div class="small-heading">A little universe made with love</div>
+  <h1>For My Princess ♡</h1>
+  <p>
+    In a universe full of stars, somehow my favourite
+    little light is you. And i always choose my moon
+    Welcome to our little world.
+  </p>
+</header>
+
+<!-- INTERACTIVE MEMORY CARDS -->
+
+<section id="memories">
+  <h2 class="section-title">Little memories</h2>
+  <p class="section-subtitle">
+    Every little moment deserves a special place.<br>
+    Tap the card or use the arrows to explore.
+  </p>
+
+  <div class="memory-wrap">
+    <div class="memory-card" id="memoryCard"
+         onclick="flipMemory()">
+
+      <div class="memory-number" id="memoryNumber"> My bestu </div>
+      <div class="memory-icon" id="memoryIcon">✨</div>
+      <h3 id="memoryTitle">A beautiful beginning</h3>
+      <p id="memoryText">
+        Some stories begin unexpectedly and become
+        the sweetest part of life.
+      </p>
+      <div class="memory-hint" id="memoryHint">
+        Tap to discover a little more ♡
+      </div>
+    </div>
+
+    <div class="memory-controls">
+      <button type="button" class="round-btn"
+              onclick="changeMemory(-1)" aria-label="Previous memory">
+        ‹
+      </button>
+
+      <span id="memoryCount">1 / 8</span>
+
+      <button type="button" class="round-btn"
+              onclick="changeMemory(1)" aria-label="Next memory">
+        ›
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- NEW SIX-PHOTO MOVING SECTION -->
+
+<section class="moving-section" id="movingMemories">
+  <h2 class="section-title">Moments in motion</h2>
+  <p class="section-subtitle">
+    Six little frames, endless beautiful feelings.
+  </p>
+
+  <div class="photo-marquee">
+    <div class="photo-track">
+
+      <!-- FIRST SET -->
+
+      <div class="moving-photo">
+        <img src="photo1.jpg" alt="Memory photo 1">
+      </div>
+
+      <div class="moving-photo">
+        <img src="photo2.jpg" alt="Memory photo 2">
+      </div>
+
+      <div class="moving-photo">
+        <img src="photo3.jpg" alt="Memory photo 3">
+      </div>
+
+      <div class="moving-photo">
+        <img src="photo4.jpg" alt="Memory photo 4">
+      </div>
+
+      <div class="moving-photo">
+        <img src="photo5.jpg" alt="Memory photo 5">
+      </div>
+
+      <div class="moving-photo">
+        <img src="photo6.jpg" alt="Memory photo 6">
+      </div>
+
+      <!-- DUPLICATE SET FOR SEAMLESS LOOP -->
+
+      <div class="moving-photo" aria-hidden="true">
+        <img src="photo1.jpg" alt="">
+      </div>
+
+      <div class="moving-photo" aria-hidden="true">
+        <img src="photo2.jpg" alt="">
+      </div>
+
+      <div class="moving-photo" aria-hidden="true">
+        <img src="photo3.jpg" alt="">
+      </div>
+
+      <div class="moving-photo" aria-hidden="true">
+        <img src="photo4.jpg" alt="">
+      </div>
+
+      <div class="moving-photo" aria-hidden="true">
+        <img src="photo5.jpg" alt="">
+      </div>
+
+      <div class="moving-photo" aria-hidden="true">
+        <img src="photo6.jpg" alt="">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="marquee-caption">
+    A LITTLE WORLD FULL OF US ♡
+  </div>
+</section>
+
+<!-- ORIGINAL PHOTO GALLERY -->
+
+<section id="gallery">
+  <h2 class="section-title">Our little gallery</h2>
+  <p class="section-subtitle">
+    A few frames, a thousand feelings.
+  </p>
+
+  <div class="gallery">
+
+    <div class="photo">
+      <img src="photo7.jpg" alt="Our memory 1">
+      <p>A little happiness ♡</p>
+    </div>
+
+    <div class="photo">
+      <img src="photo8.jpg" alt="Our memory 2">
+      <p>Beautiful moments</p>
+    </div>
+
+    <div class="photo">
+      <img src="photo10.jpg" alt="Our memory 3">
+      <p>My favourite view</p>
+    </div>
+
+    <div class="photo">
+      <img src="photo9.jpg" alt="Our memory 4">
+      <p>Sweet memories</p>
+    </div>
+
+    <div class="photo">
+      <img src="photo11.jpg" alt="Our memory 5">
+      <p>Little adventures</p>
+    </div>
+
+    <div class="photo">
+      <img src="photo12.jpg" alt="Our memory 6">
+      <p>Always special</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIMELINE -->
+
+<section id="timeline">
+  <h2 class="section-title">Our little story</h2>
+  <p class="section-subtitle">
+    Every story has moments worth remembering.
+  </p>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>The beginning ✨</h3>
+      <p>
+        The day our little story started becoming
+        something special.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>The smiles ♡</h3>
+      <p>
+        All those little conversations and moments
+        that made ordinary days beautiful.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>The memories 🌙</h3>
+      <p>
+        The moments that stay in our hearts,
+        even when time moves forward.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>More to come 💫</h3>
+      <p>
+        This is not the end of our story.
+        There are still so many beautiful pages ahead.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOVE LETTER -->
+
+<section id="letter">
+  <h2 class="section-title">A little letter</h2>
+  <p class="section-subtitle">
+    Something I wanted you to read.
+  </p>
+
+  <div class="letter-box">
+    <div class="letter-icon">💌</div>
+    <h3>Dear Nefertiti♡</h3>
+
+    <p>
+      I made this little corner of the internet
+      just to make my cuttu feels better♡and cuutu cuutu smile karne laging.
+      jada kuch to nahi aata nishu ko par kosis karing♡
+    </p>
+
+    <button type="button" class="letter-button"
+            onclick="toggleLetter()" id="letterButton">
+      letter for love♡
+    </button>
+
+    <div id="letterMessage">
+      <p>
+        My sweetu my bacha..just small greetings for my nefertity
+        bacha chotusa message to remind my princes ki gussa hoing to 
+        bilkul axa nahi dikhta mere cuttu ke face pe.yes mai hi gussa diladeta hu bacha ko 
+        wo bhi maning par itna gussa aap ko nahi shova deta.
+        <br><br>
+        aap gussa rahing to mera bhi mann lagta hai kya mujhe bhi kharab laging
+        bahot.my sweetheart my lovee dovee aab mann jao babu..i am soory my nefertity 
+        praying to my shree jee and mahadev jee wo sabb thik kardenge. dekhing upar kitna pyara laging hasing to happy happy we.
+        
+ 
+        <br><br>
+        In the absecne of my Moon dekhing to kaise dark dark hoing mai
+        my start rahing to sab sparkle karding...harr taraf lights and warm rahing
+        and mai bhi bacha bann jaing sweetu ke samne.
+        <br><br>
+        bhagwan jee sabb kala pila hara najar hatading jaldi se and my sweetu ko jaldi se manading.
+        <br><br>
+        from your akdu khadoos pakau Nishu
+        With lots of love ♡
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL SURPRISE -->
+
+<section id="surprise">
+  <div class="surprise">
+    <h2>One last little surprise...</h2>
+    <p>
+      There is one thing I want you to remember.
+      You are precious, your smile matters,
+      and you deserve all the beautiful things
+      life has to offer. amd Aap ko pata ba chahe aap gusaa hojao upset hojao even thousands time mai fir bhi manaunga 
+      because this is how i thought my bacha soching.
+        "Tum agar manao ge to mann jaungi "
+    </p>
+
+    <button type="button" onclick="showSurprise()">
+      Open your surprise ✨
+    </button>
+
+    <div id="surpriseMessage">
+      You are my favourite little universe ♡
+      my safe place♡, my comfort zone♡
+      <br>
+      Always keep shining,bacha couse i am siking it from your sparkle Nefertiti! 🌙
+    </div>
+  </div>
+</section>
+
+<footer>
+  Made with love, for my princess <span>♡</span>
+  <br>
+  हर हर महादेव 🔱
+</footer>
+
+</main>
+
+<!-- MUSIC CONTROL BUTTON -->
+
+<button type="button" class="music-button"
+        id="musicButton" onclick="toggleMusic()">
+  ♫ Music: ON
+</button>
+
+<script>
+
+/* ENTER WEBSITE AND START MUSIC */
+
+function enterWebsite() {
+  var opening = document.getElementById("opening");
+  var main = document.getElementById("main");
+
+  if (!opening || !main) {
+    alert("Please reload the website.");
+    return;
+  }
+
+  opening.style.display = "none";
+  main.style.display = "block";
+
+  window.scrollTo(0, 0);
+
+  startHearts();
+  startMusic();
+}
+
+/* BACKGROUND MUSIC */
+
+var musicPlaying = false;
+
+function startMusic() {
+  var music = document.getElementById("backgroundMusic");
+  var musicButton = document.getElementById("musicButton");
+
+  musicButton.style.display = "block";
+
+  music.volume = 0.55;
+
+  var playPromise = music.play();
+
+  if (playPromise !== undefined) {
+    playPromise.then(function() {
+      musicPlaying = true;
+      musicButton.textContent = "♫ Music: ON";
+    }).catch(function() {
+      musicPlaying = false;
+      musicButton.textContent = "♫ Tap for music";
+    });
+  }
+}
+
+function toggleMusic() {
+  var music = document.getElementById("backgroundMusic");
+  var musicButton = document.getElementById("musicButton");
+
+  if (music.paused) {
+    music.play().then(function() {
+      musicPlaying = true;
+      musicButton.textContent = "♫ Music: ON";
+    }).catch(function() {
+      musicButton.textContent = "♫ Music unavailable";
+    });
+  } else {
+    music.pause();
+    musicPlaying = false;
+    musicButton.textContent = "♫ Music: OFF";
+  }
+}
+
+/* MEMORY CARD CONTENT */
+
+var memories = [
+  {
+    icon: "✨",
+    title: "A beautiful beginning",
+    front: "Some stories begin unexpectedly and become the sweetest part of life.",
+    back: "And somehow, this little story became one of my favourite things."
+  },
+  {
+    icon: "🌸",
+    title: "Your beautiful smile",
+    front: "Some smiles can make an ordinary day feel special.",
+    back: "Your smile is one of those little things I never want to forget."
+  },
+  {
+    icon: "🌙",
+    title: "Late night thoughts",
+    front: "Sometimes the smallest conversations become the biggest memories.",
+    back: "A little conversation with you can make even a long day feel lighter."
+  },
+  {
+    icon: "💗",
+    title: "A special person",
+    front: "Out of so many people in this world, you became someone special.",
+    back: "And I hope you always know how much you matter."
+  },
+  {
+    icon: "🦋",
+    title: "Little butterflies",
+    front: "Some feelings are too beautiful to explain in words.",
+    back: "A little happiness, a little excitement, and a whole lot of affection."
+  },
+  {
+    icon: "⭐",
+    title: "My favourite star",
+    front: "The sky has countless stars, but some shine differently.",
+    back: "Keep shining in your own beautiful way, always."
+  },
+  {
+    icon: "🔱",
+    title: "Mahadev's blessings",
+    front: "May your path always be filled with strength and peace.",
+    back: "हर हर महादेव. May every new day bring you closer to your dreams."
+  },
+  {
+    icon: "💞",
+    title: "The story continues",
+    front: "This little collection is only a beginning.",
+    back: "There are still countless beautiful memories waiting to be made."
+  }
+];
+
+var currentMemory = 0;
+var memoryRevealed = false;
+
+function updateMemory() {
+  var memory = memories[currentMemory];
+
+  document.getElementById("memoryNumber").textContent =
+    "MEMORY " + String(currentMemory + 1).padStart(2, "0");
+
+  document.getElementById("memoryIcon").textContent = memory.icon;
+  document.getElementById("memoryTitle").textContent = memory.title;
+  document.getElementById("memoryText").textContent = memory.front;
+  document.getElementById("memoryHint").textContent =
+    "Tap to discover a little more ♡";
+
+  document.getElementById("memoryCount").textContent =
+    (currentMemory + 1) + " / " + memories.length;
+
+  memoryRevealed = false;
+}
+
+function flipMemory() {
+  var memory = memories[currentMemory];
+
+  if (memoryRevealed) {
+    document.getElementById("memoryText").textContent = memory.front;
+    document.getElementById("memoryHint").textContent =
+      "Tap to discover a little more ♡";
+  } else {
+    document.getElementById("memoryText").textContent = memory.back;
+    document.getElementById("memoryHint").textContent =
+      "A little message from my heart ♡";
+  }
+
+  memoryRevealed = !memoryRevealed;
+}
+
+function changeMemory(direction) {
+  currentMemory += direction;
+
+  if (currentMemory < 0) {
+    currentMemory = memories.length - 1;
+  }
+
+  if (currentMemory >= memories.length) {
+    currentMemory = 0;
+  }
+
+  updateMemory();
+}
+
+/* LOVE LETTER */
+
+function toggleLetter() {
+  var message = document.getElementById("letterMessage");
+  var button = document.getElementById("letterButton");
+
+  if (message.style.display === "block") {
+    message.style.display = "none";
+    button.textContent = "Open my letter ♡";
+  } else {
+    message.style.display = "block";
+    button.textContent = "Close my letter ♡";
+  }
+}
+
+/* FINAL SURPRISE */
+
+function showSurprise() {
+  var message = document.getElementById("surpriseMessage");
+
+  message.style.display = "block";
+  createHeartBurst();
+}
+
+/* FLOATING HEARTS */
+
+var heartTimer = null;
+
+function createHeart() {
+  var heart = document.createElement("div");
+  heart.className = "heart";
+
+  var heartTypes = ["♡", "💗", "💕", "💖", "✨"];
+
+  heart.textContent =
+    heartTypes[Math.floor(Math.random() * heartTypes.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (14 + Math.random() * 17) + "px";
+  heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(function() {
+    heart.remove();
+  }, 10000);
+}
+
+function startHearts() {
+  if (heartTimer !== null) return;
+
+  heartTimer = setInterval(createHeart, 900);
+}
+
+function createHeartBurst() {
+  for (var i = 0; i < 18; i++) {
+    setTimeout(createHeart, i * 100);
+  }
+}
+
+/* INITIALIZE MEMORY */
+
+updateMemory();
+
+</script>
+
+</body>
+</html>
